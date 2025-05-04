@@ -5,7 +5,6 @@
 //  Created by Hummingbird on 04/05/2025.
 //
 
-import Foundation
 import SwiftUI
 
 class TabRouter: ObservableObject{
@@ -38,14 +37,27 @@ func viewForRoute(_ route: Route, router: Router) -> some View{
     switch route {
     case .home:
         HomeView()
+            //.environmentObject(TabRouter()) // optional if HomeView uses tabRouter, else remove
+
     case .mylist:
         ListItemsView()
+            .environmentObject(router) // inject router
+
     case .details(let id):
         DetailView(id: id)
+            .environmentObject(router) // inject router
+
     case .settings:
         SettingsView()
+            //.environmentObject(TabRouter()) // optional if HomeView uses tabRouter, else remove
+
     case .profile:
         ProfileView()
+            //.environmentObject(TabRouter()) // optional if HomeView uses tabRouter, else remove
     
+    case .beautifulcardview:
+        BeautifulCardView()
+            .environmentObject(router) // inject router
+
     }
 }

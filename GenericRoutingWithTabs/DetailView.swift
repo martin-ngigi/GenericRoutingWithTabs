@@ -25,8 +25,8 @@ struct DetailView: View {
             }
             .buttonStyle(.bordered)
             
-            Button("Back to Settings"){
-                router.push(.settings)
+            Button("Back to Beautiful Card"){
+                router.push(.beautifulcardview)
             }
             .buttonStyle(.bordered)
 

@@ -13,4 +13,5 @@ enum Route: Hashable {
     case details(id: Int)
     case settings
     case profile
+    case beautifulcardview
 }
